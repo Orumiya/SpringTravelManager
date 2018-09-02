@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Office Section</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Office name</th>
+        <th>Tax identification</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>ZIP code</th>
+        <th>Free address</th>
+
+
+    </tr>
+    <th:block th:each="office : ${offices}">
+        <tr>
+            <td th:text="${office.officeName}"></td>
+            <td th:text="${office.taxId}"></td>
+            <td th:text="${office.addressCountry}"></td>
+            <td th:text="${office.addressCity}"></td>
+            <td th:text="${office.addressZip}"></td>
+            <td th:text="${office.addressFree}"></td>
+        </tr>
+    </th:block>
+
+</table>
+
+<form action="#" th:action="@{/saveOffice}" th:object="${office}" method="post">
+    <table border="1">
+        <tr>
+            <td><label>Office name</label></td>
+            <td><input type="text" th:field="*{officeName}" /></td>
+        </tr>
+        <tr>
+            <td><label>Tax identification</label></td>
+            <td><input type="text" th:field="*{taxId}" /></td>
+        </tr>
+        <tr>
+            <td><label>Country</label></td>
+            <td><input type="text" th:field="*{addressCountry}" /></td>
+        </tr>
+        <tr>
+            <td><label>City</label></td>
+            <td><input type="text" th:field="*{addressCity}" /></td>
+        </tr>
+        <tr>
+            <td><label>ZIP code</label></td>
+            <td><input type="text" th:field="*{addressZip}" /></td>
+        </tr>
+        <tr>
+            <td><label>Free address</label></td>
+            <td><input type="text" th:field="*{addressFree}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Save" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
