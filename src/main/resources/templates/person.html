@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Birthdate</th>
+
+    </tr>
+    <th:block th:each="person : ${persons}">
+        <tr>
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+            <td th:text="${person.birthDate}"></td>
+        </tr>
+    </th:block>
+
+</table>
+
+<form action="#" th:action="@{/savePerson}" th:object="${person}" method="post">
+    <table border="1">
+        <tr>
+            <td><label>First Name</label></td>
+            <td><input type="text" th:field="*{firstName}" /></td>
+        </tr>
+        <tr>
+            <td><label>Last Name</label></td>
+            <td><input type="text" th:field="*{lastName}" /></td>
+        </tr>
+        <tr>
+            <td><label>Birthdate</label></td>
+            <td><input type="text" th:field="*{birthDate}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
