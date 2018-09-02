@@ -21,6 +21,7 @@ public class PersonController {
     public String getFirstName(){
        return personRepository.findAll().get(0).getFirstName();
     }
+
     @GetMapping("personList") //visszatérési érték alapján egy view resolvert keres (template nevet)
     public String getPersonList(Model model){
         model.addAttribute("persons",personRepository.findAll());

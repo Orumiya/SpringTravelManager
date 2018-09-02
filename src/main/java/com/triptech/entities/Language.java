@@ -1,9 +1,11 @@
 package com.triptech.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Language {
+    @Id
     private String lang;
 
     public String getLang() {
