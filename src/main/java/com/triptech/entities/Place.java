@@ -3,6 +3,8 @@ package com.triptech.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 @Entity
 public class Place {
@@ -11,6 +13,9 @@ public class Place {
     private Long id;
     private String country;
     private String city;
+
+    @ManyToMany(mappedBy = "placeList")
+    private List<Travel> travelListInPlace;
 
     public Long getId() {
         return id;
