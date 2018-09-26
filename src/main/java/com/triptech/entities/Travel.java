@@ -29,6 +29,33 @@ public class Travel {
     @ManyToMany
     private List<TourProgram> programList;
 
+    @ManyToMany
+    private List<TourOrder> tourOrderList;
+
+    public List<Place> getPlaceList() {
+        return placeList;
+    }
+
+    public void setPlaceList(List<Place> placeList) {
+        this.placeList = placeList;
+    }
+
+    public List<TourProgram> getProgramList() {
+        return programList;
+    }
+
+    public void setProgramList(List<TourProgram> programList) {
+        this.programList = programList;
+    }
+
+    public List<TourOrder> getTourOrderList() {
+        return tourOrderList;
+    }
+
+    public void setTourOrderList(List<TourOrder> tourOrderList) {
+        this.tourOrderList = tourOrderList;
+    }
+
     public Long getId() {
         return id;
     }

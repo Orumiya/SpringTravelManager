@@ -1,9 +1,7 @@
 package com.triptech.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -17,17 +15,51 @@ public class TourOrder {
     private Integer adultCount;
     private Integer childCount;
     private Integer totalSum;
+    private Integer totalSumWithLoyalty;
     private Boolean isLoyalty;
     private Boolean isPayed;
+
+    @ManyToOne
+    private Travel bookedTravel;
+
+    @ManyToOne()
+    private Customer customer;
+
+    public Integer getTotalSumWithLoyalty() {
+        return totalSumWithLoyalty;
+    }
+
+    public void setTotalSumWithLoyalty(Integer totalSumWithLoyalty) {
+        this.totalSumWithLoyalty = totalSumWithLoyalty;
+    }
+
+
+    public Boolean getCancelled() {
+        return isCancelled;
+    }
+
+    public void setCancelled(Boolean cancelled) {
+        isCancelled = cancelled;
+    }
+
     private Boolean isCancelled;
 
-    //customer ID
+    public Travel getBookedTravel() {
+        return bookedTravel;
+    }
+
+    public void setBookedTravel(Travel bookedTravel) {
+        this.bookedTravel = bookedTravel;
+    }
 
 
-    //travel ID
+    public Customer getCustomer() {
+        return customer;
+    }
 
-    @ManyToMany
-    private List<Travel> travelList;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Long getId() {
         return id;
@@ -85,12 +117,6 @@ public class TourOrder {
         isPayed = payed;
     }
 
-    public Boolean getCancelled() {
-        return isCancelled;
-    }
 
-    public void setCancelled(Boolean cancelled) {
-        isCancelled = cancelled;
-    }
 
 }

@@ -31,7 +31,7 @@ public class OfficeController {
     @PostMapping("saveOffice")
     public String saveOffice(@ModelAttribute Office office, Model model){
         officeRepository.save(office);
-        model.addAttribute("persons", officeRepository.findAll());
+        model.addAttribute("offices", officeRepository.findAll());
         model.addAttribute("office", new Office());
         return "office";
     }

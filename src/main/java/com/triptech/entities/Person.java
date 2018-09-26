@@ -3,10 +3,12 @@ package com.triptech.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
 import java.time.LocalDate;
 
 //pojo-bol entity az annotaciok altal
 @Entity
+@Inheritance
 public class Person {
     @Id
     @GeneratedValue
