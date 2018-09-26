@@ -49,10 +49,58 @@
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                New customer <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Edit ...
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Search ...
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integrations
+                            </a>
+                        </li>
+                    </ul>
 
-        <table>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div>
+
+        <table class="table table-striped">
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -68,29 +116,38 @@
             </th:block>
 
         </table>
+    </div>
+    <div>
 
         <form action="#" th:action="@{/savePerson}" th:object="${person}" method="post">
-            <table border="1">
-                <tr>
-                    <td><label>First Name</label></td>
-                    <td><input type="text" th:field="*{firstName}" /></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name</label></td>
-                    <td><input type="text" th:field="*{lastName}" /></td>
-                </tr>
-                <tr>
-                    <td><label>Birthdate</label></td>
-                    <td><input type="text" th:field="*{birthDate}" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" class="btn btn-success" value="Save"></input></td>
-
-                </tr>
-            </table>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" th:field="*{firstName}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" th:field="*{lastName}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Birthdate</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" th:field="*{birthDate}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="submit" class="btn btn-success" value="Save"></input>
+                </div>
+            </div>
         </form>
 
+
     </div>
+            </main>
 </div> <!-- /container -->
 
 </body>
