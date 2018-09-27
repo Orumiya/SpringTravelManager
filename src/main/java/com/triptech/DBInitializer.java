@@ -30,11 +30,12 @@ public class DBInitializer implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         //a spring containernek jeleztük, h alkalmas időpontban hívja meg a metódust
-        Person person = new Person();
-        person.setFirstName("Lilla");
-        person.setLastName("Lila");
-        person.setBirthDate(LocalDate.of(1986,03,12));
-        personRepository.save(person);
+        Customer customer = new Customer();
+        customer.setFirstName("Lilla");
+        customer.setLastName("Lila");
+        customer.setBirthDate(LocalDate.of(1986,03,12));
+
+        customerRepository.save(customer);
 
         Office office = new Office();
         office.setOfficeName("Happy Sunshine Travel");
@@ -45,10 +46,10 @@ public class DBInitializer implements ApplicationRunner {
         office.setAddressZip("1111");
         officeRepository.save(office);
 
-        Customer customer = new Customer();
+        Customer customer2 = new Customer();
 
-        customer.setFirstName("Kelemen");
-        customer.setLoyalty(true);
+        customer2.setFirstName("Kelemen");
+        customer2.setLoyalty(true);
         TourOrder newOrder = new TourOrder();
         newOrder.setTotalSum(1200000);
         tourOrderRepository.save(newOrder);
