@@ -57,16 +57,18 @@ public class PersonController {
             BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             return "error";
-        }
-        model.addAttribute("firstName", customer.getFirstName());
-        model.addAttribute("lastName", customer.getLastName());
-        model.addAttribute("birthDate", customer.getBirthDate());
+        }else {
+            model.addAttribute("firstName", customer.getFirstName());
+            model.addAttribute("lastName", customer.getLastName());
+            model.addAttribute("birthDate", customer.getBirthDate());
+            model.addAttribute("idNumber",customer.getIdNumber());
 
-        customerMap.put(customer.getId(), customer);
-        customerRepository.save(customer);
-        model.addAttribute("customers", customerRepository.findAll()); //a model a kommunikációs csatorna a html felé
-        model.addAttribute("customer", new Customer());
-        return "customer";
+            customerMap.put(customer.getId(), customer);
+            customerRepository.save(customer);
+            model.addAttribute("customers", customerRepository.findAll()); //a model a kommunikációs csatorna a html felé
+            model.addAttribute("customer", new Customer());
+            return "customer";
+        }
     }
 
     @ModelAttribute

@@ -1,5 +1,7 @@
 package com.triptech.entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +17,8 @@ public class Person {
     private Long id; //lehet null
     private String lastName;
     private String firstName;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
     private Integer idNumber;
 
