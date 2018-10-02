@@ -8,6 +8,17 @@ import java.util.List;
 public class Customer extends Person {
 
     private Boolean isLoyalty;
+
+    public Integer getLoyaltyCardNumber() {
+        return loyaltyCardNumber;
+    }
+
+    public void setLoyaltyCardNumber(Integer loyaltyCardNumber) {
+        this.loyaltyCardNumber = loyaltyCardNumber;
+    }
+
+    private Integer loyaltyCardNumber;
+
     @OneToMany
     private List<TourOrder> tourOrderList;
 

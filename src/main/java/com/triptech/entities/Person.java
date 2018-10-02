@@ -20,7 +20,53 @@ public class Person {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
-    private Integer idNumber;
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
+    }
+
+    private String idNumber;
+    private String idType;
+    private String addressCountry;
+    private String addressCity;
+
+    public String getIdType() {
+        return idType;
+    }
+
+    public void setIdType(String idType) {
+        this.idType = idType;
+    }
+
+    public String getAddressCountry() {
+        return addressCountry;
+    }
+
+    public void setAddressCountry(String addressCountry) {
+        this.addressCountry = addressCountry;
+    }
+
+    public String getAddressCity() {
+        return addressCity;
+    }
+
+    public void setAddressCity(String addressCity) {
+        this.addressCity = addressCity;
+    }
+
+    public String getAddressFree() {
+        return addressFree;
+    }
+
+    public void setAddressFree(String addressFree) {
+        this.addressFree = addressFree;
+    }
+
+    private String addressFree;
 
 
     public Long getId() {
@@ -55,11 +101,5 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public Integer getIdNumber() {
-        return idNumber;
-    }
 
-    public void setIdNumber(Integer idNumber) {
-        this.idNumber = idNumber;
-    }
 }

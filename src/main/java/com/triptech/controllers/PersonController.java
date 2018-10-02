@@ -37,17 +37,6 @@ public class PersonController {
         return "customer";
     }
 
-    /*
-    @PostMapping("saveCustomer")
-    public String saveCustomer(@ModelAttribute Customer customer, Model model){
-
-
-        customerRepository.save(customer);
-        model.addAttribute("customers", customerRepository.findAll()); //a model a kommunikációs csatorna a html felé
-        model.addAttribute("customer", new Customer());
-        return "customer";
-    }
-*/
 
     private Map<Long, Customer> customerMap = new HashMap<>();
 
@@ -61,7 +50,13 @@ public class PersonController {
             model.addAttribute("firstName", customer.getFirstName());
             model.addAttribute("lastName", customer.getLastName());
             model.addAttribute("birthDate", customer.getBirthDate());
+            model.addAttribute("idType",customer.getIdType());
             model.addAttribute("idNumber",customer.getIdNumber());
+            model.addAttribute("addressCountry",customer.getAddressCountry());
+            model.addAttribute("addressCity",customer.getAddressCity());
+            model.addAttribute("addressFree",customer.getAddressFree());
+            //model.addAttribute("isLoyalty",customer.getLoyalty());
+           // model.addAttribute("loyaltyCard",customer.getLoyaltyCardNumber());
 
             customerMap.put(customer.getId(), customer);
             customerRepository.save(customer);
@@ -75,4 +70,7 @@ public class PersonController {
     public void addAttributes(Model model) {
         model.addAttribute("msg", "Welcome!");
     }
+
+
+
 }
